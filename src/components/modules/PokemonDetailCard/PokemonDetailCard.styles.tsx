@@ -36,11 +36,16 @@ export const PokemonDetailCardContainer = styled.div`
   transition: all 0.3s ease;
   position: relative;
   width: 900px;
+  min-height: 500px;
   overflow: hidden;
   animation: ${fadeIn} 0.6s ease-out;
 
   @media (max-width: 768px) {
     padding: 1.5rem;
+    flex-direction: column;
+    width: 400px;
+    max-height: 500px;
+    overflow-y: auto;
   }    
 `
 
@@ -136,6 +141,9 @@ export const SizeValue = styled.span`
 export const StatsContainer = styled.div`
     width: 100%;
     padding-top: 4rem;
-    margin-left: 4rem
-;
+    margin-left: 4rem;
+
+    @media (max-width: 768px) {
+      margin-left: 0px;
+  }  
 `
