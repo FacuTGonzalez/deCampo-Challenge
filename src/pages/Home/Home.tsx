@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useGetAllPokemons } from '../../services/pokemonsService/hooks/useGetAllPokemons';
 import PokemonList from '../../components/modules/PokemonList/PokemonList';
 import { Description, Header, HomeContainer } from './Home.styles';
