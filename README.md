@@ -63,7 +63,7 @@ src/
 ### Instalación
 ```bash
 # Clonar el repositorio
-git clone [URL_DEL_REPOSITORIO]
+git clone https://github.com/FacuTGonzalez/deCampo-Challenge.git
 
 # Navegar al directorio
 cd pokedex-challenge
