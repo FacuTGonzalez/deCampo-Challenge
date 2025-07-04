@@ -7,7 +7,7 @@ export const pokemonService = {
         const response = await api.get(pokemonRoutes.getAllPokemons(limit, offset));
         return response.data;
     },
-    getPokemonById: async (id: number) => {
+    getPokemonById: async (id: string) => {
         const response = await api.get(pokemonRoutes.getPokemonById(id));
         return response.data;
     },

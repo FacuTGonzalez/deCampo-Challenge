@@ -1,16 +1,4 @@
-import { Link } from 'react-router-dom';
-import styled, { keyframes } from 'styled-components';
-
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
+import styled, { keyframes } from "styled-components";
 
 const bounce = keyframes`
   0%, 20%, 50%, 80%, 100% {
@@ -24,36 +12,38 @@ const bounce = keyframes`
   }
 `;
 
-export const PokemonCardContainer = styled(Link)`
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+export const PokemonDetailCardContainer = styled.div`
   background: white;
+  display: flex;
+  flex-direction: row;
   color: #2d3748;
   border-radius: 1rem;
   padding: 2rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   border: 2px solid #e5e7eb;
   text-decoration: none;
+  transition: all 0.3s ease;
   position: relative;
-  width: 300px;
+  width: 900px;
   overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-  }
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  }
+  animation: ${fadeIn} 0.6s ease-out;
 
   @media (max-width: 768px) {
     padding: 1.5rem;
-  }
-`;
+  }    
+`
+
 
 export const ImageContainer = styled.div`
   display: flex;
@@ -62,8 +52,8 @@ export const ImageContainer = styled.div`
 `;
 
 export const PokemonImg = styled.img`
-  width: 150px;
-  height: 150px;
+  width: 300px;
+  height: 300px;
   object-fit: contain;
   border-radius: 0.5rem;
   transition: transform 0.3s ease;
@@ -79,10 +69,16 @@ export const PokemonImg = styled.img`
   }
 `;
 
-export const PokemonTitle = styled.p`
+export const PokemonInfoContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    min-width: 160px;
+`
+
+export const PokemonName = styled.p`
   font-size: 1.75rem;
   font-weight: bold;
-  text-align: center;
+  text-align: start;
   color: #2d3748;
   margin-bottom: 1rem;
   text-transform: capitalize;
@@ -93,9 +89,16 @@ export const PokemonTitle = styled.p`
   }
 `;
 
+export const SectionTitle = styled.p`
+  margin-bottom: 0.5rem;
+  margin-top: 0px;
+  font-size: 18px;
+  font-weight: bold;
+`;
+
 export const TypeContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: start;
   margin-bottom: 1.5rem;
 `;
 
@@ -114,18 +117,25 @@ export const TypeBadge = styled.span`
   }
 `;
 
-export const WeightContainer = styled.div`
-  text-align: center;
+export const SizeContainer = styled.div`
+  text-align: start;
   color: #4a5568;
   font-size: 1rem;
 `;
 
-export const WeightLabel = styled.span`
+export const SizeLabel = styled.span`
   font-weight: 500;
 `;
 
-export const WeightValue = styled.span`
-  font-size: 1.2rem;
+export const SizeValue = styled.span`
+  font-size: 16px;
   font-weight: bold;
   color: #2d3748;
 `;
+
+export const StatsContainer = styled.div`
+    width: 100%;
+    padding-top: 4rem;
+    margin-left: 4rem
+;
+`

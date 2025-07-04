@@ -12,5 +12,8 @@ export const PokemonsGrid = styled.div`
 display: flex;
 flex-wrap: wrap;
 width: 90%;
-gap:2rem
+gap:1rem;
+justify-content: center;
+max-height: 665px;
+overflow-y: auto;
 `

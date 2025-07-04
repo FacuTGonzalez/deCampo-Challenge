@@ -1,9 +1,9 @@
-import React, { useCallback, type ReactNode } from 'react';
+import { useCallback } from 'react';
 import {
     ImageContainer,
     PokemonImg,
     PokemonTitle,
-    StyledCard,
+    PokemonCardContainer,
     TypeBadge,
     TypeContainer,
     WeightContainer,
@@ -13,17 +13,9 @@ import {
 import { Link } from 'react-router-dom';
 
 import type { PokemonType } from '../../../models/type.model';
-import type { PokemonDetail } from '../../../models/pokemon.model';
 import { useAppDispatch } from '../../../store/hooks';
 import { setSelectedPokemon } from '../../../store/slides/pokemonSlide';
-
-export interface PokemonCardBaseProps {
-    pokemon?: PokemonDetail;
-    children?: ReactNode;
-    src?: string;
-    alt?: string;
-    types?: PokemonType[];
-}
+import type { PokemonCardBaseProps } from './PokemonCard.types';
 
 const PokemonCard = ({ pokemon, children }: PokemonCardBaseProps) => {
 
@@ -36,9 +28,9 @@ const PokemonCard = ({ pokemon, children }: PokemonCardBaseProps) => {
       
 
     return (
-        <StyledCard as={Link} to={`/pokemon/${pokemon?.id}`} onClick={handleSelectPokemon}>
+        <PokemonCardContainer as={Link} to={`/pokemon/${pokemon?.id}`} onClick={handleSelectPokemon}>
             {children}
-        </StyledCard>
+        </PokemonCardContainer>
     )
 };
 

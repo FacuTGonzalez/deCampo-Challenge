@@ -1,5 +1,3 @@
-// Interfaces auxiliares
-
 import type { NamedAPIResource } from "./api.model";
 
   
@@ -32,7 +30,6 @@ import type { NamedAPIResource } from "./api.model";
     pokemon: NamedAPIResource;
   }
   
-  // Interface principal
   export interface TypeDetail {
     id: number;
     name: string;
@@ -48,6 +45,6 @@ import type { NamedAPIResource } from "./api.model";
 
   export type PokemonType = {
     slot: number;
-    type: NamedAPIResource; // Type
+    type: NamedAPIResource;
   };
   

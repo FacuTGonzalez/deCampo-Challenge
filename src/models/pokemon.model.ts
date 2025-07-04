@@ -1,11 +1,8 @@
-// Tipos básicos reutilizables
 
 import type { NamedAPIResource } from "./api.model";
 import type { PokemonType, TypeDetail } from "./type.model";
 
-  
-  // Detalles del Pokémon
-  export type PokemonDetail = {
+export type PokemonDetail = {
     id: string;
     name: string;
     base_experience: number;
@@ -29,29 +26,23 @@ import type { PokemonType, TypeDetail } from "./type.model";
     typeDetail: TypeDetail[];
   };
   
-  // Habilidades del Pokémon
   export type PokemonAbility = {
     is_hidden: boolean;
     slot: number;
     ability: NamedAPIResource; // Ability
   };
   
-  // Tipos actuales
-
   
-  // Tipos pasados por generación
   export type PokemonTypePast = {
     generation: NamedAPIResource; // Generation
     types: PokemonType[];
   };
   
-  // Habilidades pasadas por generación
   export type PokemonAbilityPast = {
     generation: NamedAPIResource; // Generation
     abilities: PokemonAbility[] | null;
   };
   
-  // Ítems que puede tener
   export type PokemonHeldItem = {
     item: NamedAPIResource; // Item
     version_details: PokemonHeldItemVersion[];
@@ -62,27 +53,24 @@ import type { PokemonType, TypeDetail } from "./type.model";
     rarity: number;
   };
   
-  // Movimientos que puede aprender
   export type PokemonMove = {
     move: NamedAPIResource; // Move
     version_group_details: PokemonMoveVersion[];
   };
   
   export type PokemonMoveVersion = {
-    move_learn_method: NamedAPIResource; // MoveLearnMethod
-    version_group: NamedAPIResource; // VersionGroup
+    move_learn_method: NamedAPIResource;
+    version_group: NamedAPIResource;
     level_learned_at: number;
     order?: number;
   };
   
-  // Stats base
   export type PokemonStat = {
-    stat: NamedAPIResource; // Stat
+    stat: NamedAPIResource;
     effort: number;
     base_stat: number;
   };
   
-  // Sprites
   export type PokemonSprites = {
     front_default: string | null;
     front_shiny: string | null;
@@ -94,16 +82,14 @@ import type { PokemonType, TypeDetail } from "./type.model";
     back_shiny_female: string | null;
   };
   
-  // Cries (sonidos)
   export type PokemonCries = {
     latest: string;
     legacy: string;
   };
   
-  // Índices del juego
   export type VersionGameIndex = {
     game_index: number;
-    version: NamedAPIResource; // Version
+    version: NamedAPIResource;
   };
   
   

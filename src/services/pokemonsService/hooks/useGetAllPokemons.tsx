@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { Pokemon, PokemonDetail } from '../../../models/pokemon.model';
 import { pokemonService } from '../pokemonService';
-import { typeService } from '../../typeService/typeService';
-import type { PokemonType } from '../../../models/type.model';
 
 type UseGetAllPokemonsReturn = {
     pokemonList: PokemonDetail[];
@@ -27,7 +25,7 @@ export const useGetAllPokemons = ({
     initialCount=0
 }: UseGetAllPokemonsProps = {}): UseGetAllPokemonsReturn => {
     const [pokemonList, setPokemonList] = useState<PokemonDetail[]>([]);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
 
     const [page, setPage] = useState<number>(initialPage);
@@ -38,7 +36,6 @@ export const useGetAllPokemons = ({
         const fetchData = async () => {
             setLoading(true);
             setError(null);
-
             try {
 
                 const offset = page * limit;
