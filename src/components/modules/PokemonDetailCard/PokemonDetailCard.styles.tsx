@@ -69,8 +69,8 @@ export const PokemonImg = styled.img`
   }
 
   @media (max-width: 768px) {
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
   }
 `;
 
